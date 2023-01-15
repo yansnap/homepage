@@ -159,9 +159,34 @@ body {
 }
 
 .skills-header {
-  color: var(--secondary-text-color);
+  /* color: var(--secondary-text-color); */
   text-align: center;
   margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+.boujee-text {
+  --bg-size: 400%;
+  --color-one: hsl(15 90% 55%);
+  --color-two: hsl(40 95% 55%);
+  font-size: clamp(1.5rem, 1vmin, 1rem);
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: move-bg 8s infinite linear;
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
 }
 
 .skills-text {
@@ -269,8 +294,8 @@ svg:hover {
 }
 
 .interective-text:hover {
-    color: rgb(0, 195, 255);
-    transition: 0.5s;
+  color: rgb(0, 195, 255);
+  transition: 0.5s;
 }
 
 .weird-span {
@@ -282,7 +307,6 @@ svg:hover {
   color: rgb(0, 0, 0);
   text-decoration: none;
   text-align: center;
-  
 }
 
 .glow-on-hover {
@@ -297,15 +321,25 @@ svg:hover {
   z-index: 0;
   border-radius: 10px;
   margin-top: 10px;
-
 }
 
 .glow-on-hover:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
 
   background-size: 400%;
   z-index: -1;
@@ -314,12 +348,12 @@ svg:hover {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 .glow-on-hover:active {
-  color: #000
+  color: #000;
 }
 
 .glow-on-hover:active:after {
@@ -343,7 +377,13 @@ svg:hover {
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
