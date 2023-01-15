@@ -4,11 +4,31 @@
     <meta charset="UTF-8" />
     <title>Résumé</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <body class="dark">
     <main>
+
       <div class="resume">
+        <div style="margin: auto; height: 0px; margin-left: 40px;">
+          <!-- <label>
+            <input type="checkbox" />
+            <span class="check"> </span>
+          </label> -->
+  
+          <input type="checkbox" id="toggle" />
+  
+          <label class="toggle" for="toggle">
+            <i class="bx bxs-sun"></i>
+            <i class="bx bxs-moon"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
         <div class="container">
           <div class="resume-block">
             <h1 class="contact-info-header interective-text">Yan Sampai</h1>
@@ -323,9 +343,16 @@
 
                 <div class="additional-info-languages">
                   <h3 class="additional-info-languages-header">Languages</h3>
-                  <div style="display: flex; justify-items: center;">
-                    <img src="assets/icons/japan.png" width="30px"  height="28px" />
-                    <p style="margin-left: 5px; margin-top: 3px;" class="additional-info-languages-item">
+                  <div style="display: flex; justify-items: center">
+                    <img
+                      src="assets/icons/japan.png"
+                      width="30px"
+                      height="28px"
+                    />
+                    <p
+                      style="margin-left: 5px; margin-top: 3px"
+                      class="additional-info-languages-item"
+                    >
                       Japan (Elementry)
                     </p>
                   </div>
@@ -348,5 +375,7 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
