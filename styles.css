@@ -192,6 +192,7 @@ body {
 .skills-text {
   color: var(--secondary-text-color);
   text-align: justify;
+  
 }
 
 .experiences {
@@ -386,4 +387,9 @@ svg:hover {
   100% {
     background-position: 0 0;
   }
+}
+
+#navigation
+{
+  float: right;
 }
