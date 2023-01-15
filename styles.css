@@ -201,7 +201,6 @@ body {
 }
 
 .experiences-header {
-  color: var(--secondary-text-color);
   text-align: left;
   margin-bottom: 20px;
 }
@@ -237,6 +236,13 @@ body {
   color: var(--primary-text-color);
   text-align: left;
   margin-bottom: 10px;
+  color: var(--primary-text-color);
+  text-decoration-color: var(--text-decoration-color);
+  text-decoration-line: underline;
+}
+.experiences-company-project-name:hover {
+  color: orange;
+  transition: 0.5s;
 }
 
 .experiences-company-project-responsibilities {
