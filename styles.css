@@ -223,6 +223,7 @@ body {
 .experiences-company-project {
   margin-left: 15px;
   margin-bottom: 25px;
+  
 }
 
 .experiences-company-project-role {
@@ -259,10 +260,10 @@ body {
 }
 
 .additional-info-education-header {
-  color: var(--secondary-text-color);
   text-align: left;
   margin-bottom: 20px;
 }
+
 
 .additional-info-education-university-durability {
   color: var(--durability-text-color);
@@ -275,6 +276,12 @@ body {
   color: var(--primary-text-color);
   text-align: left;
   margin-bottom: 10px;
+  width: 110px;
+}
+
+.additional-info-education-university-speciality:hover {
+  color: orange;
+  transition: 0.5s;
 }
 
 .additional-info-education-university-name {
@@ -285,10 +292,10 @@ body {
   margin-bottom: 20px;
 }
 
-.additional-info-languages-header {
-  color: var(--secondary-text-color);
+.additional-info-languages-header { 
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .additional-info-languages-item {
