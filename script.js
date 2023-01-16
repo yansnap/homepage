@@ -6,7 +6,6 @@ const primaryText = document.querySelector('.primary-text-color');
 const secondaryText = document.querySelector('.secondary-text-color');
 
 toggle.addEventListener('change', () => {
-
   body.classList.toggle('dark');
 
   sunIcon.className =
@@ -14,6 +13,3 @@ toggle.addEventListener('change', () => {
   moonIcon.className =
     moonIcon.className == 'bx bxs-moon' ? 'bx bx-moon' : 'bx bxs-moon';
 });
-
-
-

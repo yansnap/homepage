@@ -8,15 +8,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   transition: 0.5s;
-  --secondary-text-color: #000000;
-  --primary-text-color: #000000;
+
+  --secondary-text-color: #000;
+  --primary-text-color: #000;
   --durability-text-color: #6a737d9c;
   --icon-color: #33567e;
   --border-color: #ff9a0045;
-  --experiance-text-color: #000000;
+  --text-decoration-color: orange;
+  --experiance-text-color: 000;
   --experiance-text-color-hover: orange;
   --button-color: #fff;
-
 }
 
 .container {
@@ -53,11 +54,11 @@ body {
 
 @media screen and (max-width: 576px) {
   .main-info,
-  .contact_info_container {
+  .contact-info-container {
     flex-direction: column;
   }
 
-  .contact_info_container {
+  .contact-info-container {
     align-items: center;
   }
 
@@ -95,7 +96,7 @@ body {
   justify-content: space-between;
 }
 
-.contact-info-block--center {
+.contact-info-block-center {
   justify-content: center;
 }
 
@@ -168,24 +169,6 @@ body {
   margin-left: 15px;
 }
 
-.boujee-text {
-  --bg-size: 400%;
-  --color-one: hsl(15 90% 55%);
-  --color-two: hsl(40 95% 55%);
-  font-size: clamp(1.5rem, 1vmin, 1rem);
-  background: linear-gradient(
-      90deg,
-      var(--color-one),
-      var(--color-two),
-      var(--color-one)
-    )
-    0 0 / var(--bg-size) 100%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: move-bg 8s infinite linear;
-}
-
 @keyframes move-bg {
   to {
     background-position: var(--bg-size) 0;
@@ -235,13 +218,13 @@ body {
 }
 
 .experiences-company-project-name {
-  color: var(--primary-text-color);
   text-align: left;
   margin-bottom: 10px;
   color: var(--primary-text-color);
   text-decoration-color: var(--text-decoration-color);
   text-decoration-line: none;
 }
+
 .experiences-company-project-name:hover {
   color: orange;
   transition: 0.5s;
@@ -308,7 +291,7 @@ body {
 }
 
 svg:hover {
-  fill: rgb(0, 195, 255);
+  fill: #00c3ff;
   transition: 0.5s;
 }
 
@@ -343,24 +326,24 @@ svg:hover {
   margin-top: 10px;
 }
 
-.glow-on-hover:before {
-  content: '';
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+.glow-on-hover::before {
+  content: "";
+  background:
+    linear-gradient(
+      45deg,
+      #f00,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #f00
+    );
   position: absolute;
   top: -2px;
   left: -2px;
-
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -376,17 +359,9 @@ svg:hover {
   color: #000;
 }
 
-.glow-on-hover:active:after {
-  background: transparent;
-}
-
-.glow-on-hover:hover:before {
-  opacity: 1;
-}
-
-.glow-on-hover:after {
+.glow-on-hover::after {
   z-index: -1;
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -396,13 +371,23 @@ svg:hover {
   border-radius: 10px;
 }
 
+.glow-on-hover:active::after {
+  background: transparent;
+}
+
+.glow-on-hover:hover::before {
+  opacity: 1;
+}
+
 @keyframes glowing {
   0% {
     background-position: 0 0;
   }
+
   50% {
     background-position: 400% 0;
   }
+
   100% {
     background-position: 0 0;
   }
@@ -454,7 +439,7 @@ input {
 
 .light .toggle {
   background: linear-gradient(145deg, #e1e1e1, #fff);
-  box-shadow: 3px 3px 4px #e6e6e6, -3px -3px 4px #ffffff;
+  box-shadow: 3px 3px 4px #e6e6e6, -3px -3px 4px #fff;
 }
 
 .light .toggle .bxs-sun {
@@ -475,12 +460,13 @@ input {
 
 .dark {
   background: #151d2a;
-  --primary-text-color: #ffffff;
-  --secondary-text-color: #ffffff;
-  --text-decoration-color: rgb(0, 195, 255);
+
+  --primary-text-color: #fff;
+  --secondary-text-color: #fff;
+  --text-decoration-color: #00c3ff;
   --icon-color: #ff0808;
-  --experiance-text-color: rgb(151, 224, 247);
-  --experiance-text-color-hover: rgb(0, 195, 255);
+  --experiance-text-color: #97e0f7;
+  --experiance-text-color-hover: #00c3ff;
   --button-color: #151d2a;
 }
 
@@ -500,4 +486,24 @@ input {
 .dark .toggle .ball {
   background: #fafafa;
   transform: translateX(60px);
+}
+
+.boujee-text {
+  --bg-size: 400%;
+  --color-one: hsl(15deg 90% 55%);
+  --color-two: hsl(40deg 95% 55%);
+
+  font-size: clamp(1.5rem, 1vmin, 1rem);
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 8s infinite linear;
 }
