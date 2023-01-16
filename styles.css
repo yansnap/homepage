@@ -7,13 +7,16 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  transition: .7s;
-  --primary-text-color: #181820;
-  --secondary-text-color: #5c5c62;
+  transition: 0.5s;
+  --secondary-text-color: #000000;
+  --primary-text-color: #000000;
   --durability-text-color: #6a737d9c;
-  --icon-color: #6a737d;
+  --icon-color: #33567e;
   --border-color: #ff9a0045;
-  --text-decoration-color: #ff9a00;
+  --experiance-text-color: #000000;
+  --experiance-text-color-hover: orange;
+  --button-color: #fff;
+
 }
 
 .container {
@@ -214,7 +217,7 @@ body {
 .experiences-company-header-name {
   color: var(--primary-text-color);
   text-decoration-color: var(--text-decoration-color);
-  text-decoration-line: underline;
+  text-decoration-line: none;
   text-align: left;
   margin-bottom: 20px;
 }
@@ -237,11 +240,15 @@ body {
   margin-bottom: 10px;
   color: var(--primary-text-color);
   text-decoration-color: var(--text-decoration-color);
-  text-decoration-line: underline;
+  text-decoration-line: none;
 }
 .experiences-company-project-name:hover {
   color: orange;
   transition: 0.5s;
+}
+
+.exp-text-color {
+  color: var(--experiance-text-color);
 }
 
 .experiences-company-project-responsibilities {
@@ -282,7 +289,7 @@ body {
 }
 
 .additional-info-education-university-name {
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 }
 
 .additional-info-languages {
@@ -290,13 +297,14 @@ body {
 }
 
 .additional-info-languages-header {
+  color: var(--primary-text-color);
   text-align: left;
   margin-bottom: 15px;
   margin-top: 20px;
 }
 
 .additional-info-languages-item {
-  color: var(--secondary-text-color);
+  color: var(--experiance-text-color);
 }
 
 svg:hover {
@@ -305,8 +313,9 @@ svg:hover {
 }
 
 .interective-text:hover {
-  color: rgb(0, 195, 255);
+  color: var(--experiance-text-color-hover);
   transition: 0.5s;
+  text-decoration-line: none;
 }
 
 .weird-span {
@@ -315,7 +324,7 @@ svg:hover {
 }
 
 .weird-text {
-  color: rgb(0, 0, 0);
+  color: var(--secondary-text-color);
   text-decoration: none;
   text-align: center;
 }
@@ -325,8 +334,8 @@ svg:hover {
   height: 30px;
   border: none;
   outline: none;
-  color: #fff;
-  background: rgb(254, 255, 255);
+  color: var(--button-color);
+  background: var(--button-color);
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -381,7 +390,7 @@ svg:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgb(255, 255, 255);
+  background: var(--button-color);
   left: 0;
   top: 0;
   border-radius: 10px;
@@ -403,69 +412,6 @@ svg:hover {
   float: right;
 }
 
-/* input[type='checkbox'] {
-  -webkit-appearance: none;
-  visibility: hidden;
-  display: none;
-}
-
-.check {
-  position: relative;
-  display: block;
-  float: right;
-  margin-right: 50px;
-  width: 40px;
-  height: 20px;
-  background: #092c3e;
-  cursor: pointer;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: ease-in 0.5s;
-}
-
-input[type='checkbox']:checked ~ .check {
-  background: #fff;
-  box-shadow: 0 0 0 1200px #092c3e;
-}
-
-.check::before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  background: #fff;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  transition: 0.5s;
-}
-
-input[type='checkbox']:checked ~ .check::before {
-  transform: translateX(-50px);
-}
-
-.check::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  background: #092c3e;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  transition: 0.5s;
-  transform: translateX(50px);
-}
-
-input[type='checkbox']:checked ~ .check::after {
-  transform: translateX(0px);
-} */
-
-
-input {
-  display: none;
-}
-
 .toggle {
   cursor: pointer;
   position: relative;
@@ -474,6 +420,7 @@ input {
   width: 120px;
   height: 60px;
   border-radius: 50px;
+  transition: 0.7s;
 }
 
 .toggle i {
@@ -490,10 +437,15 @@ input {
   height: 45px;
   margin: 7.5px;
   border-radius: 50%;
+  transition: 0.3s ease-out;
+}
+
+input {
+  display: none;
 }
 
 /*
-    -- Light Mode --
+  -- Light Mode --
 */
 
 .light {
@@ -502,12 +454,14 @@ input {
 
 .light .toggle {
   background: linear-gradient(145deg, #e1e1e1, #fff);
-  box-shadow: 3px 3px 4px #e6e6e6, -3px -3px -4px #ffffff;
+  box-shadow: 3px 3px 4px #e6e6e6, -3px -3px 4px #ffffff;
 }
+
 .light .toggle .bxs-sun {
   color: #fafafa;
 }
-.light .toggle .bxs-moon {
+
+.light .toggle .bx-moon {
   color: #151d2a;
 }
 
@@ -516,25 +470,34 @@ input {
 }
 
 /*
-    -- Dark Mode --
+  -- Dark Mode --
 */
 
 .dark {
   background: #151d2a;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #ffffff;
+  --text-decoration-color: rgb(0, 195, 255);
+  --icon-color: #ff0808;
+  --experiance-text-color: rgb(151, 224, 247);
+  --experiance-text-color-hover: rgb(0, 195, 255);
+  --button-color: #151d2a;
 }
 
 .dark .toggle {
   background: #151d2a;
-  box-shadow: 3px 3px 4px #0e131b, -3px -3px -4px #1c2739;
+  box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 }
+
 .dark .toggle .bx-sun {
-  color: #ffffff;
+  color: #fafafa;
 }
+
 .dark .toggle .bxs-moon {
   color: #151d2a;
 }
 
 .dark .toggle .ball {
-  background: #ffffff;
+  background: #fafafa;
   transform: translateX(60px);
 }
